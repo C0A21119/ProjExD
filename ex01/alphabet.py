@@ -49,7 +49,6 @@ def kaitou(abs_chars):
         print("全部正解です。")
         return True
             
-
 if __name__ == "__main__":
     st = time.time()
     alphabet = [chr(i + 65) for i in range(num_of_alphabet)]
