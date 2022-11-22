@@ -1,7 +1,8 @@
 import random
+import datetime
 
 
-def shutudai():
+def shutudai(qa_lst):
     qa = random.choice(qa_lst)
     print("問題："+qa["q"])
     return qa["a"]
@@ -25,5 +26,5 @@ if __name__=="__main__":
         {"q":"タラオはカツオから見てどんな関係？","a":["甥","おい","甥っ子","おいっこ"]}
     ]
 
-    shutudai(qa_lst)
+    ans_lst = shutudai(qa_lst)
     kaitou(ans_lst)
