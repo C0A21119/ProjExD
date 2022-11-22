@@ -1,6 +1,5 @@
 import random
 import time
-
 def shutudai(alphabet):
     all_chars = random.sample
     qa = random.choice(qa_lst)
