@@ -12,7 +12,7 @@ def button_click(event):
         entry.insert(tk.END,res)
     else:
         entry.insert(tk.END,i)
-    if i == 'AC':
+    if i == 'AC':##AC機能の追加
          entry.delete(0,tk.END)
 
 root = tk.Tk()
@@ -35,7 +35,7 @@ for i in range(0,10,1):##数字の並びを逆に変更
 
 operators = ["+","=","*","/",".","AC","%","-"]##表示記号追加
 for ope in operators:
-    button = tk.Button(root,text=f"{ope}",width=4,height=1,font=("",30),fg='#ff0000')
+    button = tk.Button(root,text=f"{ope}",width=4,height=1,font=("",30),fg='#ff0000')##演算記号を赤で表示'#ff0000で赤を示している
     button.grid(row = r, column = c)
     button.bind("<1>",button_click)
     c += 1
