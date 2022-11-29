@@ -4,7 +4,17 @@ import tkinter.messagebox as tkm
 def button_click(event):
     btn =event.widget
     i =btn["text"]
-    tkm.showinfo("",f"{i}ボタンがクリックされました。")
+    if i =="=":
+        siki = entry.get()
+        res = eval(siki)
+        entry.delete(0,tk.END)
+        entry.insert(tk.END,res)
+    else:
+
+   ## tkm.showinfo("",f"{i}ボタンがクリックされました。")
+        entry.insert(tk.END,i)
+
+
 root = tk.Tk()
 root.geometry("300x500")
 
