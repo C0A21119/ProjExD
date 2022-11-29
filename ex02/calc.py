@@ -23,7 +23,7 @@ entry.grid(row=0,column=0, columnspan=3)
 
 
 r,c = 1,0
-for i in range(0,10,1):##数字の並びを逆に変更
+for i in range(10):##数字の並びを逆に変更
     button = tk.Button(root,text=f"{i}",width=4,height=1,font=("",30))
     button.grid(row = r, column = c)
     button.bind("<1>",button_click)
