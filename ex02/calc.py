@@ -10,8 +10,6 @@ def button_click(event):
         entry.delete(0,tk.END)
         entry.insert(tk.END,res)
     else:
-
-   ## tkm.showinfo("",f"{i}ボタンがクリックされました。")
         entry.insert(tk.END,i)
 
 
