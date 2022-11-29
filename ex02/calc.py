@@ -4,7 +4,7 @@ import tkinter.messagebox as tkm
 def button_click(event):
     btn =event.widget
     i =btn["text"]
-    if i =="=":
+    if i =="=":##イコールのみここで定義
         siki = entry.get()
         res = eval(siki)
         entry.delete(0,tk.END)
@@ -21,7 +21,6 @@ entry.grid(row=0,column=0, columnspan=3)
 
 
 r,c = 1,0
-
 for i in range(9,-1,-1):
     button = tk.Button(root,text=f"{i}",width=4,height=2,font=("",30))
     button.grid(row = r, column = c)
