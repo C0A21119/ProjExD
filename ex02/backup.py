@@ -4,6 +4,7 @@ import tkinter.messagebox as tkm
 def button_click(event):
     btn =event.widget
     i =btn["text"]
+    
     if i =="=":##イコールここで定義
         siki = entry.get()
         res = eval(siki)
@@ -31,9 +32,10 @@ for i in range(0,10,1):##数字の並びを逆に変更
         r+=1
         c =0
 
+
 operators = ["+","=","*","/",".","AC","%","-"]##表示記号追加
 for ope in operators:
-    button = tk.Button(root,text=f"{ope}",width=4,height=1,font=("",30))
+    button = tk.Button(root,text=f"{ope}",width=4,height=1,font=("",30),fg='#ff0000')
     button.grid(row = r, column = c)
     button.bind("<1>",button_click)
     c += 1
