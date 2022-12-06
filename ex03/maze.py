@@ -16,6 +16,7 @@ def main_proc():
     if key == "Down": my += 1
     if key == "Left": mx -= 1
     if key == "Right": mx += 1
+
     #上下左右で移動した場所に目隠しを入れる
     if key == "Up": canvas.create_image(cx,cy,image=kokaton101,tag="kokaton")
     if key == "Down": canvas.create_image(cx,cy,image=kokaton101,tag="kokaton")
@@ -41,7 +42,6 @@ if __name__ == "__main__":
     maze_lst = mm.make_maze(15,9)
     #print(maze_lst)
     mm.show_maze(canvas,maze_lst)
-
 
     kokaton = tk.PhotoImage(file="fig/8.png")
     kokaton101 = tk.PhotoImage(file="fig/101.png")
@@ -79,7 +79,6 @@ if __name__ == "__main__":
     label.pack()
     tmr = 0
     jid = None
-    #count_up()
     root.bind("<KeyPress>",key_down)
 
 root.mainloop()
