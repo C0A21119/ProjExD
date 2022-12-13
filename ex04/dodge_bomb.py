@@ -3,7 +3,6 @@ import random
 import sys
 import tkinter.messagebox as tkm
 
-
 def check_bound(obj_rct, scr_rct):
     # 第1引数：こうかとんrectまたは爆弾rect
     # 第2引数：スクリーンrect
@@ -22,7 +21,6 @@ def check_bound(obj_rct, scr_rct):
     if obj_rct.top < scr_rct.top or scr_rct.bottom < obj_rct.bottom:
         tate2 = -1
     return yoko2, tate2
-
 
 def main():
     i = 1000
@@ -104,8 +102,6 @@ def main():
                 tori_rct.centerx += 1
             if key_dct[pg.K_RIGHT] == True:
                 tori_rct.centerx -= 1
-
-
                        
         scrn_sfc.blit(tori_sfc, tori_rct) 
 
@@ -129,7 +125,6 @@ def main():
             vx*=-1.35
         if tate == False:
             vy*=-1.35
-        
     
         if tori_rct.colliderect(bomb_rct): #ゲームオーバー時にウィンドウを表示
             txt ="ゲームオーバー"
@@ -143,8 +138,6 @@ def main():
         pg.display.update()
         clock.tick(i)
         
-
-
 if __name__ == "__main__":
     pg.init()
     main()
