@@ -18,10 +18,10 @@ def main_proc():
     if key == "Right": mx += 1
 
     #上下左右で移動した場所に目隠しを入れる
-    if key == "Up": canvas.create_image(cx,cy,image=kokaton101,tag="kokaton")
-    if key == "Down": canvas.create_image(cx,cy,image=kokaton101,tag="kokaton")
-    if key == "Left": canvas.create_image(cx,cy,image=kokaton101,tag="kokaton")
-    if key == "Right": canvas.create_image(cx,cy,image=kokaton101,tag="kokaton")
+    if key == "Up": canvas.create_image(cx,cy,image=kokaton10,tag="kokaton")
+    if key == "Down": canvas.create_image(cx,cy,image=kokaton10,tag="kokaton")
+    if key == "Left": canvas.create_image(cx,cy,image=kokaton10,tag="kokaton")
+    if key == "Right": canvas.create_image(cx,cy,image=kokaton10,tag="kokaton")
 
     if maze_lst[mx][my] == 1: #移動先が壁だったら
         if key == "Up": my += 1
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     mm.show_maze(canvas,maze_lst)
 
     kokaton = tk.PhotoImage(file="fig/8.png")
-    kokaton101 = tk.PhotoImage(file="fig/101.png")
+    kokaton10 = tk.PhotoImage(file="fig/10.png")
     mx,my = 1, 1
     cx,cy = mx*100+50,my*100+50
     canvas.create_image(cx,cy,image=kokaton,tag="kokaton")
