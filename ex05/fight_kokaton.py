@@ -21,7 +21,6 @@ class Screen:
     def blit(self):
         self.sfc.blit(self.bgi_sfc, self.bgi_rct)
 
-
 # こうかとんの表示
 class Bird:
     
@@ -60,7 +59,6 @@ class Bird:
                     self.rct.centerx -= delta[0]
                     self.rct.centery -= delta[1]
         self.blit(scr)
-
 
 # 爆弾の表示
 class Bomb:
@@ -105,10 +103,6 @@ class Items:
             self.rct.move_ip(self.vx, self.vy) # 練習6
             self.blit(scr)
 
-
-
-    
-
 # 敵の表示
 class Enemy:
 
@@ -129,7 +123,6 @@ class Enemy:
         self.vy += 0.009
         self.rct.move_ip(self.vx, self.vy) # 練習6
         self.blit(scr)
-
 
 # gameoverクラス
 class GameOver:
@@ -184,7 +177,6 @@ def check_bound(obj_rct, scr_rct):
         tate = -1
     return yoko, tate
 
-
 # 画像の読み込み
 def load_image(file):
     file = os.path.join(main_dir, "data", file)
@@ -193,7 +185,6 @@ def load_image(file):
     except pg.error:
         raise SystemExit('Could not load image "%s" %s' % (file, pg.get_error()))
     return surface.convert()
-
 
 # 音の追加
 def load_sound(file):
@@ -206,7 +197,6 @@ def load_sound(file):
     except pg.error:
         print("Warning, unable to load, %s" % file)
     return None
-
 
 # gameover画面の追加
 def gameover():
@@ -230,22 +220,19 @@ def gameover():
 def main():
     # 練習1
     scr = Screen("負けるな！こうかとん", (1600, 900), "fig/pg_bg.jpg")
-
     # 練習3
     tori = Bird("fig/6.png", 2.0, (900, 400))
-
     # 練習5
-    bomb = Bomb((255, 0, 0), 10, (+1, +1), scr)
-    eney = Enemy("fig/12.png", (50, 40), (+1, +1))
+    bomb = Bomb((255, 0, 0), 10, (+1, +1), scr)          #爆弾
+    eney = Enemy("fig/12.png", (50, 40), (+1, +1))       #敵
     shot = Shot((255, 255, 255), 10, (+1, +1), scr, tori)
-    boom_sound = load_sound("boom.wav")
-    tem = Items((255, 0, 0), 10, (+1, +1), scr)
-    
+    boom_sound = load_sound("boom.wav")                  #音
+    tem = Items((255, 0, 0), 10, (+1, +1), scr)          #アイテム
+
     # 練習1
     clock = pg.time.Clock() 
     while True:
         scr.blit()
-
         # 練習2
         for event in pg.event.get(): 
             if event.type == pg.QUIT:
@@ -255,7 +242,6 @@ def main():
         bomb.update(scr)
         eney.update(scr)
         tem.update(scr)
-
 
         key_state = pg.key.get_pressed()
         if   key_state[pg.K_SPACE]:
